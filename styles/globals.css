@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "./reset.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #f3f3f3;
+  background-color: #F3F3F3;
+  font-family: noto-sans, sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
