@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 type Step = {
   stage: string;
   titleTop: string;
@@ -36,7 +39,7 @@ const steps: Step[] = [
 
 export default function WorkProcess() {
   return (
-    <section className="w-full bg-[#F3F3F3] py-[160px] px-[100px]">
+    <section className="hidden w-full bg-[#F3F3F3] py-[160px] px-[100px] lg:block">
       <div className="mx-auto max-w-[1440px]">
         <h2 className="mb-8 text-start text-[64px] font-black text-[#3A4731]">
           ПРОЦЕСС РАБОТЫ
@@ -64,7 +67,14 @@ export default function WorkProcess() {
               const offset = baseOffset + index * gap + correction;
 
               return (
-                <div key={step.stage} className="relative flex flex-col">
+                <motion.div
+                  key={step.stage}
+                  className="relative flex flex-col"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
+                >
                   <span className="mt-0 text-[24px] font-bold text-[#3A4731] text-center">
                     {step.stage}
                   </span>
@@ -95,7 +105,7 @@ export default function WorkProcess() {
                     </p>
                     <p className="mt-2 text-[16px]">СРОК:</p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

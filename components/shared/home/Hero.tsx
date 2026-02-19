@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen max-h-[870px] w-full flex items-center px-[120px] py-[250px]">
+    <section className="relative flex h-screen max-h-[870px] w-full items-center px-4 py-20 sm:px-8 lg:px-[120px] lg:py-[250px]">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/main/hero-main.png"
@@ -14,16 +14,19 @@ export default function Hero() {
         />
       </div>
 
-      <h1 className="text-[96px] font-bold text-[#F3F3F3]">
+      <h1 className="text-[40px] sm:text-[56px] lg:text-[96px] font-bold text-[#F3F3F3] max-w-[280px] sm:max-w-none">
         Студия дизайна <br /> интерьера <br /> CIRCLE
       </h1>
 
-      <div className="flex flex-col gap-4 mt-[150px] -ml-[100px]">
-        <p className="text-[16px] font-normal text-[#F3F3F3] max-w-[350] leading-tight">
+      <div className="mt-6 flex max-w-xs flex-col gap-4 sm:mt-10 sm:max-w-sm lg:mt-[150px] lg:-ml-[100px]">
+        <p className="text-[14px] sm:text-[16px] font-normal text-[#F3F3F3] leading-tight">
           Современные жилые и коммерческие интерьеры. Авторский подход,
           сопровождение и реализация под ключ.
         </p>
-        <Button variant="ghost" className="h-[54px] text-[16px] font-bold">
+        <Button
+          variant="ghost"
+          className="h-[48px] text-[14px] font-bold sm:h-[54px] sm:text-[16px]"
+        >
           Посмотреть проекты
         </Button>
       </div>

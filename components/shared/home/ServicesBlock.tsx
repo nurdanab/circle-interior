@@ -68,7 +68,7 @@ export default function ServicesBlock() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-[#F3F3F3] px-[100px]">
+    <section className="w-full bg-[#F3F3F3] px-4 py-16 sm:px-6 lg:px-[100px] lg:py-[160px]">
       <div className="mx-auto max-w-[1440px]">
         <h2 className="text-[64px] font-black text-[#3A4731]">услуги</h2>
 

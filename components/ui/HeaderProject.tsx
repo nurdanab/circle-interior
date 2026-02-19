@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { nav } from "@/lib/constants";
 
-export default function Header() {
+export default function HeaderProject() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-[1440px] flex items-center justify-between px-6 lg:px-20 py-5 bg-[#19191833]/20 backdrop-blur-sm border border-white/20 text-[16px]">
@@ -15,18 +14,6 @@ export default function Header() {
             priority
           />
         </Link>
-
-        <nav className="hidden lg:block">
-          <ul className="flex items-center gap-8 text-[#F3F3F3]">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hover:opacity-70 transition">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
 
         <div className="flex items-center gap-2 text-[20px] text-[#F3F3F3]">
           <button className="text-[20px] font-black">ru</button>

@@ -9,9 +9,9 @@ export default function ProjectsSection({
   projects?: Project[];
 }) {
   return (
-    <section className="w-full bg-[#F3F3F3] py-[160px] px-[120px]">
+    <section className="w-full bg-[#F3F3F3] py-16 px-4 sm:px-6 lg:py-[160px] lg:px-[120px]">
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="mb-[54px] text-center text-[64px] font-black text-[#191918]">
+        <h2 className="mb-[32px] sm:mb-[40px] text-center text-[32px] sm:text-[40px] lg:text-[64px] font-black text-[#191918]">
           НАШИ ПРОЕКТЫ
         </h2>
 

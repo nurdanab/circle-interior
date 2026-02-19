@@ -4,38 +4,38 @@ import Image from "next/image";
 
 export default function ContactBlock() {
   return (
-    <section className="bg-[#E7E7E7] py-[60px] px-[120px] flex items-center gap-6 w-full mt-[120px]">
-      <div className="flex flex-col gap-[60px] items-start w-1/2">
+    <section className="bg-[#E7E7E7] mt-[80px] w-full px-4 py-12 sm:px-6 lg:mt-[120px] lg:flex lg:items-center lg:gap-6 lg:px-[120px] lg:py-[60px]">
+      <div className="flex flex-col gap-8 items-start w-full lg:w-1/2">
         <div className="flex flex-col text-start">
-          <span className="text-[48px] font-black text-[#191918]">
+          <span className="text-[32px] sm:text-[40px] lg:text-[48px] font-black text-[#191918]">
             Остались вопросы?
           </span>
-          <span className="text-[24px] text-[#191918]">
+          <span className="mt-2 text-[16px] sm:text-[18px] lg:text-[24px] text-[#191918]">
             Оставьте заявку, и мы свяжемся с вами!
           </span>
         </div>
-        <form className="flex flex-col gap-[17px] w-full">
+        <form className="flex w-full flex-col gap-4 sm:gap-[17px]">
           <Input
             variant="primary"
             placeholder="Имя"
-            className="h-[65px] rounded-[50px] backdrop-blur-xs text-[24px]"
+            className="h-[56px] rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
           <Input
             variant="primary"
             placeholder="Телефон"
             type="tel"
-            className="h-[65px] rounded-[50px] backdrop-blur-xs text-[24px]"
+            className="h-[56px] rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
           <Button
             variant="primary"
-            className="h-[65px] rounded-[50px] backdrop-blur-xs text-[24px]"
+            className="h-[56px] rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           >
             Обсудить проект
           </Button>
         </form>
 
-        <div className="flex justify-between items-center w-full">
-          <div className="flex flex-col">
+        <div className="mt-6 flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col gap-1">
             <span className="text-[20px] text-[#191918]">Наши контакты:</span>
             <span className="text-[20px] text-[#191918]">+7 777 777 77 77</span>
           </div>
@@ -56,7 +56,7 @@ export default function ContactBlock() {
         </div>
       </div>
 
-      <div className="w-1/2">
+      <div className="mt-8 w-full lg:mt-0 lg:w-1/2">
         <Image
           src="/main/Map.png"
           alt="Map almaty"
