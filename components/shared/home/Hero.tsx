@@ -23,7 +23,7 @@ export default function Hero() {
           Современные жилые и коммерческие интерьеры. Авторский подход,
           сопровождение и реализация под ключ.
         </p>
-        <Button variant="secondary" size="md">
+        <Button variant="ghost" className="h-[54px] text-[16px] font-bold">
           Посмотреть проекты
         </Button>
       </div>

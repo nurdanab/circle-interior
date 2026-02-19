@@ -54,9 +54,8 @@ export default function ProjectsSection({
           ))}
           <div className="flex items-end justify-center">
             <Button
-              variant="outline"
-              size="full"
-              className="flex w-full items-center justify-between h-[80px] px-8 text-[36px] hover:bg-[#3A4731]/5 hover:text-[#3A4731]"
+              variant="secondary"
+              className="justify-between h-[80px] px-8 text-[36px] hover:bg-[#3A4731]/5 hover:text-[#3A4731]"
             >
               Оставить заявку
               <Image

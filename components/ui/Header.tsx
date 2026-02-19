@@ -17,7 +17,7 @@ export default function Header() {
         </Link>
 
         <nav>
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-8 text-[#F3F3F3]">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:opacity-70 transition">
@@ -28,10 +28,10 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2 text-[20px]">
-          <button className="opacity-100">ru</button>
-          <button className="opacity-50 hover:opacity-100">en</button>
-          <button className="opacity-50 hover:opacity-100">kz</button>
+        <div className="flex items-center gap-2 text-[20px] text-[#F3F3F3]">
+          <button className="text-[20px] font-black">ru</button>
+          <button className="text-[20px] font-normal">en</button>
+          <button className="text-[20px] font-normal">kz</button>
         </div>
       </div>
     </header>
