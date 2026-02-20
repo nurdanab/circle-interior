@@ -94,7 +94,7 @@ export default function MobileMenu({
                   <li key={item.href}>
                     <button
                       onClick={() => handleNavClick(item.href)}
-                      className="text-[24px] font-bold text-[#191918] uppercase hover:opacity-70 transition"
+                      className="text-[16px] font-bold text-[#191918] uppercase hover:opacity-70 transition"
                     >
                       {item.label}
                     </button>
@@ -102,21 +102,6 @@ export default function MobileMenu({
                 ))}
               </ul>
             </nav>
-
-            <div className="mt-10 flex items-center gap-4 text-[24px] text-[#191918]">
-              {locales.map((locale) => (
-                <Link
-                  key={locale}
-                  href={getLocalePath(locale)}
-                  onClick={onClose}
-                  className={
-                    currentLang === locale ? "font-bold" : "font-normal opacity-70"
-                  }
-                >
-                  {locale.toUpperCase()}
-                </Link>
-              ))}
-            </div>
           </motion.div>
         </>
       )}

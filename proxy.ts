@@ -3,8 +3,8 @@ import type { NextRequest } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-const locales = ["en", "ru"];
-const defaultLocale = "en";
+const locales = ["ru", "en", "kz"];
+const defaultLocale = "ru";
 
 function getLocale(request: NextRequest) {
   const headers = {
@@ -29,7 +29,7 @@ export function proxy(request: NextRequest) {
   }
 
   // 2️⃣ если язык уже есть
-  if (/^\/(en|ru)(\/|$)/.test(pathname)) {
+  if (/^\/(ru|en|kz)(\/|$)/.test(pathname)) {
     return NextResponse.next();
   }
 

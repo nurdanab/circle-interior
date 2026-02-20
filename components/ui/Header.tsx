@@ -67,12 +67,12 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="hidden lg:flex items-center gap-2 text-[20px] text-[#F3F3F3]">
+          <div className="flex items-center gap-6 lg:gap-2 text-[16px] lg:text-[20px] text-[#F3F3F3]">
             {locales.map((locale) => (
               <Link
                 key={locale}
                 href={getLocalePath(locale)}
-                className={`text-[20px] ${currentLang === locale ? "font-bold" : "font-normal opacity-70"}`}
+                className={`${currentLang === locale ? "font-bold" : "font-normal opacity-70"}`}
               >
                 {locale}
               </Link>

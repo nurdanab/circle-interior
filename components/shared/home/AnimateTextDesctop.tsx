@@ -39,28 +39,28 @@ export default function AnimateTextDesctop() {
           {rows.map((r, idx) => (
             <div key={idx} className="contents">
               {/* LEFT */}
-              <div>
+              <div className="pt-5">
                 <motion.h3
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.5 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="whitespace-pre-line text-[32px] sm:text-[40px] lg:text-[50px] leading-[0.95] font-semibold text-[#3E4A37]"
+                  className="whitespace-pre-line text-[40px] leading-[0.95] font-semibold text-[#3E4A37]"
                 >
                   {r.title}
                 </motion.h3>
               </div>
 
               {/* RIGHT */}
-              <div className="pt-4 lg:p-10">
+              <div className="pt-5">
                 <motion.p
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.5 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.06 }}
-                  className="max-w-[640px] text-[14px] sm:text-[16px] lg:text-[20px] leading-relaxed text-[#2B2B2B]"
+                  className="max-w-[640px] text-[28px] leading-relaxed text-[#2B2B2B]"
                 >
                   {r.text}
                 </motion.p>
