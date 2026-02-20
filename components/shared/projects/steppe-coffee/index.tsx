@@ -1,22 +1,17 @@
-"use client";
-
 import ProjectCard, { type ProjectItem } from "@/components/ui/ProjectCard";
-import { useDictionary } from "@/providers/DictionaryProvider";
+
+const items: ProjectItem[] = [
+  { src: "/projects-pages/steppe-coffee/1.webp", alt: "Steppe Coffee 1", aspectRatio: "4/3" },
+  { src: "/projects-pages/steppe-coffee/2.webp", alt: "Steppe Coffee 2", aspectRatio: "4/3" },
+  { src: "/projects-pages/steppe-coffee/3.webp", alt: "Steppe Coffee 3", aspectRatio: "4/3" },
+  { src: "/projects-pages/steppe-coffee/4.webp", alt: "Steppe Coffee 4", aspectRatio: "4/3" },
+  { src: "/projects-pages/steppe-coffee/5.webp", alt: "Steppe Coffee 5", aspectRatio: "4/3" },
+  { src: "/projects-pages/steppe-coffee/6.webp", alt: "Steppe Coffee 6", aspectRatio: "4/3" },
+  { src: "/projects-pages/steppe-coffee/7.webp", alt: "Steppe Coffee 7", aspectRatio: "4/3" },
+  { src: "/projects-pages/steppe-coffee/8.webp", alt: "Steppe Coffee 8", aspectRatio: "16/9" },
+];
 
 export default function SteppeCoffeeProject() {
-  const dict = useDictionary();
-
-  const items: ProjectItem[] = [
-    { src: "/projects-pages/steppe-coffee/1.webp", alt: `${dict.projects.steppeCoffee.alt} 1`, aspectRatio: "4/3" },
-    { src: "/projects-pages/steppe-coffee/2.webp", alt: `${dict.projects.steppeCoffee.alt} 2`, aspectRatio: "4/3" },
-    { src: "/projects-pages/steppe-coffee/3.webp", alt: `${dict.projects.steppeCoffee.alt} 3`, aspectRatio: "4/3" },
-    { src: "/projects-pages/steppe-coffee/4.webp", alt: `${dict.projects.steppeCoffee.alt} 4`, aspectRatio: "4/3" },
-    { src: "/projects-pages/steppe-coffee/5.webp", alt: `${dict.projects.steppeCoffee.alt} 5`, aspectRatio: "4/3" },
-    { src: "/projects-pages/steppe-coffee/6.webp", alt: `${dict.projects.steppeCoffee.alt} 6`, aspectRatio: "4/3" },
-    { src: "/projects-pages/steppe-coffee/7.webp", alt: `${dict.projects.steppeCoffee.alt} 7`, aspectRatio: "4/3" },
-    { src: "/projects-pages/steppe-coffee/8.webp", alt: `${dict.projects.steppeCoffee.alt} 8`, aspectRatio: "16/9" },
-  ];
-
   return (
     <section className="w-full h-full max-w-[1440px] mx-auto">
       {/* HERO */}
@@ -32,7 +27,7 @@ export default function SteppeCoffeeProject() {
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
           <h1 className="text-[36px] lg:text-[96px] font-bold text-white uppercase leading-[40px] lg:leading-[99px]">
-            {dict.projects.steppeCoffee.title.split(" ")[0]} <br /> {dict.projects.steppeCoffee.title.split(" ")[1]}
+            Steppe <br /> Coffee
           </h1>
         </div>
       </div>

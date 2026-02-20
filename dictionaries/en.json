@@ -115,27 +115,5 @@
     "title": "Page not found",
     "description": "Unfortunately, the requested page does not exist or has been moved",
     "backButton": "Return to the main page"
-  },
-  "projects": {
-    "steppeCoffee": {
-      "title": "Steppe Coffee",
-      "alt": "Steppe Coffee"
-    },
-    "galereya": {
-      "title": "Galereya",
-      "alt": "Galereya"
-    },
-    "homeBank": {
-      "title": "Home Bank",
-      "alt": "Home Bank"
-    },
-    "parkEmbankment": {
-      "title": "Park Embankment",
-      "alt": "Park Embankment"
-    },
-    "sportsGround": {
-      "title": "Sports Ground",
-      "alt": "Sports Ground"
-    }
   }
 }

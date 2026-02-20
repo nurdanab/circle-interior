@@ -1,19 +1,25 @@
-"use client";
-
 import Image from "next/image";
-import { useDictionary } from "@/providers/DictionaryProvider";
 
 type Item = { src: string; alt: string; aspectRatio: string };
+
+const items: Item[] = [
+  { src: "/projects-pages/galereya/1.webp", alt: "Galereya 1", aspectRatio: "4/3" },
+  { src: "/projects-pages/galereya/2.webp", alt: "Galereya 2", aspectRatio: "4/3" },
+  { src: "/projects-pages/galereya/3.webp", alt: "Galereya 3", aspectRatio: "4/3" },
+  { src: "/projects-pages/galereya/4.webp", alt: "Galereya 4", aspectRatio: "4/3" },
+  { src: "/projects-pages/galereya/5.webp", alt: "Galereya 5", aspectRatio: "16/9" },
+];
 
 function Card({
   src,
   alt,
   aspectRatio,
   fillCell,
-}: Item & { fillCell?: boolean }) {
+  priority = false,
+}: Item & { fillCell?: boolean; priority?: boolean }) {
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-[8px] bg-black ${
+      className={`relative w-full overflow-hidden rounded-[8px] bg-neutral-800 ${
         fillCell ? "h-full min-h-0" : ""
       }`}
       style={fillCell ? undefined : { aspectRatio }}
@@ -22,6 +28,8 @@ function Card({
         src={src}
         alt={alt}
         fill
+        priority={priority}
+        loading={priority ? "eager" : "lazy"}
         className="object-cover object-center"
         sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
       />
@@ -30,16 +38,6 @@ function Card({
 }
 
 export default function GalereyaProject() {
-  const dict = useDictionary();
-
-  const items: Item[] = [
-    { src: "/projects-pages/galereya/1.webp", alt: `${dict.projects.galereya.alt} 1`, aspectRatio: "4/3" },
-    { src: "/projects-pages/galereya/2.webp", alt: `${dict.projects.galereya.alt} 2`, aspectRatio: "4/3" },
-    { src: "/projects-pages/galereya/3.webp", alt: `${dict.projects.galereya.alt} 3`, aspectRatio: "4/3" },
-    { src: "/projects-pages/galereya/4.webp", alt: `${dict.projects.galereya.alt} 4`, aspectRatio: "4/3" },
-    { src: "/projects-pages/galereya/5.webp", alt: `${dict.projects.galereya.alt} 5`, aspectRatio: "16/9" },
-  ];
-
   return (
     <section className="mx-auto h-full w-full max-w-[1440px]">
       {/* HERO */}
@@ -55,7 +53,7 @@ export default function GalereyaProject() {
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
           <h1 className="text-[32px] sm:text-[48px] lg:text-[64px] font-black text-white uppercase">
-            {dict.projects.galereya.title}
+            Galereya
           </h1>
         </div>
       </div>

@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useDictionary } from "@/providers/DictionaryProvider";
 
 type Item = {
   src: string;
@@ -9,15 +6,33 @@ type Item = {
   aspectRatio: string;
 };
 
+const items: Item[] = [
+  { src: "/projects-pages/park-embankment/1.png", alt: "Park Embankment 1", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/2.png", alt: "Park Embankment 2", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/3.png", alt: "Park Embankment 3", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/4.png", alt: "Park Embankment 4", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/5.png", alt: "Park Embankment 5", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/6.png", alt: "Park Embankment 6", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/7.png", alt: "Park Embankment 7", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/8.png", alt: "Park Embankment 8", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/9.png", alt: "Park Embankment 9", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/10.png", alt: "Park Embankment 10", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/11.png", alt: "Park Embankment 11", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/12.png", alt: "Park Embankment 12", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/13.png", alt: "Park Embankment 13", aspectRatio: "16/9" },
+  { src: "/projects-pages/park-embankment/14.png", alt: "Park Embankment 14", aspectRatio: "16/9" },
+];
+
 function Card({
   src,
   alt,
   aspectRatio,
   fillCell,
-}: Item & { fillCell?: boolean }) {
+  priority = false,
+}: Item & { fillCell?: boolean; priority?: boolean }) {
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-[8px] bg-black ${
+      className={`relative w-full overflow-hidden rounded-[8px] bg-neutral-800 ${
         fillCell ? "h-full min-h-0" : ""
       }`}
       style={fillCell ? undefined : { aspectRatio }}
@@ -26,6 +41,8 @@ function Card({
         src={src}
         alt={alt}
         fill
+        priority={priority}
+        loading={priority ? "eager" : "lazy"}
         className="object-cover object-center"
         sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
       />
@@ -34,32 +51,13 @@ function Card({
 }
 
 export default function ParkEmbankmentProject() {
-  const dict = useDictionary();
-
-  const items: Item[] = [
-    { src: "/projects-pages/park-embankment/1.png", alt: `${dict.projects.parkEmbankment.alt} 1`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/2.png", alt: `${dict.projects.parkEmbankment.alt} 2`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/3.png", alt: `${dict.projects.parkEmbankment.alt} 3`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/4.png", alt: `${dict.projects.parkEmbankment.alt} 4`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/5.png", alt: `${dict.projects.parkEmbankment.alt} 5`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/6.png", alt: `${dict.projects.parkEmbankment.alt} 6`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/7.png", alt: `${dict.projects.parkEmbankment.alt} 7`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/8.png", alt: `${dict.projects.parkEmbankment.alt} 8`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/9.png", alt: `${dict.projects.parkEmbankment.alt} 9`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/10.png", alt: `${dict.projects.parkEmbankment.alt} 10`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/11.png", alt: `${dict.projects.parkEmbankment.alt} 11`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/12.png", alt: `${dict.projects.parkEmbankment.alt} 12`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/13.png", alt: `${dict.projects.parkEmbankment.alt} 13`, aspectRatio: "16/9" },
-    { src: "/projects-pages/park-embankment/14.png", alt: `${dict.projects.parkEmbankment.alt} 14`, aspectRatio: "16/9" },
-  ];
-
   return (
     <section className="mx-auto h-full w-full max-w-[1440px]">
       {/* HERO */}
       <div className="relative h-screen">
         <Image
           src="/projects-pages/park-embankment/hero-park.png"
-          alt={dict.projects.parkEmbankment.alt}
+          alt="Park Embankment"
           fill
           className="object-cover object-center"
           priority
@@ -67,7 +65,7 @@ export default function ParkEmbankmentProject() {
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
           <h1 className="text-[32px] sm:text-[48px] lg:text-[64px] font-black text-white uppercase">
-            {dict.projects.parkEmbankment.title}
+            Park Embankment
           </h1>
         </div>
       </div>

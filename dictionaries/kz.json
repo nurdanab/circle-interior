@@ -115,27 +115,5 @@
     "title": "Бет табылмады",
     "description": "Өкінішке орай, сұралған бет жоқ немесе жылжытылған",
     "backButton": "Басты бетке оралу"
-  },
-  "projects": {
-    "steppeCoffee": {
-      "title": "Steppe Coffee",
-      "alt": "Steppe Coffee"
-    },
-    "galereya": {
-      "title": "Галерея",
-      "alt": "Галерея"
-    },
-    "homeBank": {
-      "title": "Home Bank",
-      "alt": "Home Bank"
-    },
-    "parkEmbankment": {
-      "title": "Park Embankment",
-      "alt": "Park Embankment"
-    },
-    "sportsGround": {
-      "title": "Sports Ground",
-      "alt": "Sports Ground"
-    }
   }
 }
