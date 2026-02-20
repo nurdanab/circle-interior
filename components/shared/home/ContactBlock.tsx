@@ -1,28 +1,33 @@
+"use client";
+
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
+import { useDictionary } from "@/providers/DictionaryProvider";
 
 export default function ContactBlock() {
+  const dict = useDictionary();
+
   return (
     <section className="bg-[#E7E7E7] w-full px-4 py-12 sm:px-6 lg:flex lg:items-center lg:gap-6 lg:px-[120px] lg:py-[60px]">
       <div className="flex flex-col gap-8 items-center lg:items-start w-full lg:w-1/2">
         <div className="flex flex-col text-center lg:text-start">
           <span className="text-[32px] sm:text-[40px] lg:text-[48px] font-black text-[#191918]">
-            Остались вопросы?
+            {dict.contact.title}
           </span>
           <span className="mt-2 text-[16px] sm:text-[18px] lg:text-[24px] text-[#191918]">
-            Оставьте заявку, и мы свяжемся с вами!
+            {dict.contact.subtitle}
           </span>
         </div>
         <form className="flex w-full flex-col gap-4 sm:gap-[17px]">
           <Input
             variant="primary"
-            placeholder="Имя"
+            placeholder={dict.contact.namePlaceholder}
             className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
           <Input
             variant="primary"
-            placeholder="Телефон"
+            placeholder={dict.contact.phonePlaceholder}
             type="tel"
             className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
@@ -30,14 +35,18 @@ export default function ContactBlock() {
             variant="primary"
             className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           >
-            Обсудить проект
+            {dict.contact.submitButton}
           </Button>
         </form>
 
         <div className="mt-6 flex w-full flex-row justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex flex-col gap-1">
-            <span className="text-[20px] text-[#191918]">Наши контакты:</span>
-            <span className="text-[20px] text-[#191918]">+7 777 777 77 77</span>
+            <span className="text-[20px] text-[#191918]">
+              {dict.contact.contactsLabel}
+            </span>
+            <span className="text-[20px] text-[#191918]">
+              {dict.contact.phone}
+            </span>
           </div>
           <div className="flex items-center gap-[20px]">
             <Image

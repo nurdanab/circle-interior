@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Our projects",
+    "process": "Work process",
+    "services": "Services",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title1": "Interior design",
+    "title2": "studio",
+    "title3": "CIRCLE",
+    "description": "Modern residential and commercial interiors. Unique approach, support and turnkey implementation.",
+    "button": "View projects"
+  },
+  "about": {
+    "title": "About studio",
+    "paragraph1": "CIRCLE is a design and interior implementation studio. We create thoughtful residential and commercial spaces — from concept to complete turnkey implementation.",
+    "paragraph2": "A team of professionals works on each project, for whom design is not just a job, but a constant process of search, development and precision in details."
+  },
+  "features": {
+    "row1": {
+      "title": "COMPREHENSIVE\nAPPROACH",
+      "text": "We manage the project from drawings and sketches to the finished interior and furnishing."
+    },
+    "row2": {
+      "title": "COMFORT\nAND STYLE",
+      "text": "We don't draw \"pictures\", we create living spaces for your life scenarios."
+    },
+    "row3": {
+      "title": "PRECISE\nTECHNICAL\nDOCUMENTATION",
+      "text": "We provide a complete package of clear, accurate and professional technical drawings for builders"
+    }
+  },
+  "projectsSection": {
+    "title": "OUR PROJECTS",
+    "button": "Leave a request",
+    "category": "Commercial/residential"
+  },
+  "workProcess": {
+    "title": "WORK PROCESS",
+    "deadline": "DEADLINE:",
+    "step1": { "stage": "STAGE 1", "titleTop": "TECHNICAL", "titleBottom": "SPECIFICATION" },
+    "step2": { "stage": "STAGE 2", "titleTop": "SKETCH", "titleBottom": "PROJECT" },
+    "step3": { "stage": "STAGE 3", "titleTop": "VISUALIZATION" },
+    "step4": { "stage": "STAGE 4", "titleTop": "WORKING", "titleBottom": "PROJECT" },
+    "step5": { "stage": "STAGE 5", "titleTop": "AUTHOR'S", "titleBottom": "SUPERVISION" },
+    "step6": { "stage": "STAGE 6", "titleTop": "CAPITAL", "titleBottom": "RENOVATION" }
+  },
+  "services": {
+    "title": "services",
+    "private": "Private",
+    "commercial": "Commercial interiors",
+    "price": "price",
+    "openDescription": "Open tariff description",
+    "hideDescription": "Hide tariff description",
+    "orderButton": "Order design",
+    "econom": {
+      "name": "Econom",
+      "description": "Interior concept + drawings, no 3D",
+      "details": [
+        "• Measurement plan (on-site visit)",
+        "• Layout solution with furniture arrangement up to 5 options",
+        "• Collage of materials and furniture, no 3D",
+        "• Demolition and wall construction plans",
+        "• Electrical plan (sockets, switches)",
+        "• Lighting scenarios development",
+        "• Floor/ceiling plans",
+        "• Ceramic tile layouts",
+        "• Statement of finishing materials and furniture"
+      ]
+    },
+    "business": {
+      "name": "Business",
+      "description": "Individual project + drawings",
+      "details": [
+        "• Measurement plan (on-site visit)",
+        "• Layout solution with furniture arrangement up to 10 options",
+        "• Detailed 3D design of each room",
+        "• Demolition and wall construction plans",
+        "• Electrical plan (sockets, switches, lighting)",
+        "• Lighting scenarios development",
+        "• Floor/ceiling plans",
+        "• Ceramic tile layouts",
+        "• Statement of finishing materials and furniture"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "From construction to finished interior",
+      "details": [
+        "• Selection of builders for your budget",
+        "• Project estimate with prices and suppliers",
+        "• Furniture company tender",
+        "• Furniture project control",
+        "• Budget and material procurement schedule management",
+        "• Invoice verification and material delivery control",
+        "• Store visits for material selection",
+        "• Regular site visits (1-2 times a week)",
+        "• Author's supervision journal maintenance",
+        "• Photo/video reports on construction progress"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Have questions?",
+    "subtitle": "Leave a request and we will contact you!",
+    "namePlaceholder": "Name",
+    "phonePlaceholder": "Phone",
+    "submitButton": "Discuss project",
+    "contactsLabel": "Our contacts:",
+    "phone": "+7 777 777 77 77"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "Unfortunately, the requested page does not exist or has been moved",
+    "backButton": "Return to the main page"
+  },
+  "projects": {
+    "steppeCoffee": {
+      "title": "Steppe Coffee",
+      "alt": "Steppe Coffee"
+    },
+    "galereya": {
+      "title": "Galereya",
+      "alt": "Galereya"
+    },
+    "homeBank": {
+      "title": "Home Bank",
+      "alt": "Home Bank"
+    },
+    "parkEmbankment": {
+      "title": "Park Embankment",
+      "alt": "Park Embankment"
+    },
+    "sportsGround": {
+      "title": "Sports Ground",
+      "alt": "Sports Ground"
+    }
+  }
+}

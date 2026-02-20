@@ -1,24 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import { useDictionary } from "@/providers/DictionaryProvider";
 
 type Item = {
   src: string;
   alt: string;
   aspectRatio: string;
 };
-
-const items: Item[] = [
-  { src: "/projects-pages/homeBank/1.webp", alt: "1", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/2.webp", alt: "2", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/3.webp", alt: "3", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/4.webp", alt: "4", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/5.webp", alt: "5", aspectRatio: "16/9" },
-  { src: "/projects-pages/homeBank/6.webp", alt: "6", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/7.webp", alt: "7", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/8.webp", alt: "8", aspectRatio: "16/9" },
-  { src: "/projects-pages/homeBank/9.webp", alt: "9", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/10.webp", alt: "10", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/11.webp", alt: "11", aspectRatio: "16/9" },
-];
 
 function Card({
   src,
@@ -45,6 +34,22 @@ function Card({
 }
 
 export default function HomeBankProject() {
+  const dict = useDictionary();
+
+  const items: Item[] = [
+    { src: "/projects-pages/homeBank/1.webp", alt: `${dict.projects.homeBank.alt} 1`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/2.webp", alt: `${dict.projects.homeBank.alt} 2`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/3.webp", alt: `${dict.projects.homeBank.alt} 3`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/4.webp", alt: `${dict.projects.homeBank.alt} 4`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/5.webp", alt: `${dict.projects.homeBank.alt} 5`, aspectRatio: "16/9" },
+    { src: "/projects-pages/homeBank/6.webp", alt: `${dict.projects.homeBank.alt} 6`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/7.webp", alt: `${dict.projects.homeBank.alt} 7`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/8.webp", alt: `${dict.projects.homeBank.alt} 8`, aspectRatio: "16/9" },
+    { src: "/projects-pages/homeBank/9.webp", alt: `${dict.projects.homeBank.alt} 9`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/10.webp", alt: `${dict.projects.homeBank.alt} 10`, aspectRatio: "4/3" },
+    { src: "/projects-pages/homeBank/11.webp", alt: `${dict.projects.homeBank.alt} 11`, aspectRatio: "16/9" },
+  ];
+
   return (
     <section className="mx-auto w-full max-w-[1440px]">
       {/* HERO VIDEO */}
@@ -60,7 +65,7 @@ export default function HomeBankProject() {
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
           <h1 className="text-[32px] sm:text-[48px] lg:text-[64px] font-black text-white uppercase">
-            Home Bank
+            {dict.projects.homeBank.title}
           </h1>
         </div>
       </div>

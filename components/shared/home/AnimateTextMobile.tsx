@@ -1,28 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const rows = [
-  {
-    title: "КОМПЛЕКСНЫЙ\nПОДХОД",
-    text: "Ведем проект от чертежей и эскизов до готового интерьера и комплектации.",
-  },
-  {
-    title: "УДОБСТВО\nИ СТИЛЬ",
-    text: "Не рисуем «картинки», а создаем жилые пространства под ваши сценарии жизни.",
-  },
-  {
-    title: "ТОЧНАЯ\nТЕХНИЧЕСКАЯ\nДОКУМЕНТАЦИЯ",
-    text: "Мы предоставляем полный пакет понятных, точных и профессиональных технических чертежей для строителей",
-  },
-];
+import { useDictionary } from "@/providers/DictionaryProvider";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   show: { opacity: 1, y: 0 },
 };
 
-export default function BenefitsGridMobile() {
+export default function AnimateTextMobile() {
+  const dict = useDictionary();
+
+  const rows = [
+    { title: dict.features.row1.title, text: dict.features.row1.text },
+    { title: dict.features.row2.title, text: dict.features.row2.text },
+    { title: dict.features.row3.title, text: dict.features.row3.text },
+  ];
+
   return (
     <section className="relative block lg:hidden">
       <div className="mx-auto max-w-[1440px] px-4 py-10">

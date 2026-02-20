@@ -1,14 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useDictionary } from "@/providers/DictionaryProvider";
 
 type Item = { src: string; alt: string; aspectRatio: string };
-
-const items: Item[] = [
-  { src: "/projects-pages/galereya/1.webp", alt: "1", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/2.webp", alt: "2", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/3.webp", alt: "3", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/4.webp", alt: "4", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/5.webp", alt: "5", aspectRatio: "16/9" },
-];
 
 function Card({
   src,
@@ -35,6 +30,16 @@ function Card({
 }
 
 export default function GalereyaProject() {
+  const dict = useDictionary();
+
+  const items: Item[] = [
+    { src: "/projects-pages/galereya/1.webp", alt: `${dict.projects.galereya.alt} 1`, aspectRatio: "4/3" },
+    { src: "/projects-pages/galereya/2.webp", alt: `${dict.projects.galereya.alt} 2`, aspectRatio: "4/3" },
+    { src: "/projects-pages/galereya/3.webp", alt: `${dict.projects.galereya.alt} 3`, aspectRatio: "4/3" },
+    { src: "/projects-pages/galereya/4.webp", alt: `${dict.projects.galereya.alt} 4`, aspectRatio: "4/3" },
+    { src: "/projects-pages/galereya/5.webp", alt: `${dict.projects.galereya.alt} 5`, aspectRatio: "16/9" },
+  ];
+
   return (
     <section className="mx-auto h-full w-full max-w-[1440px]">
       {/* HERO */}
@@ -50,7 +55,7 @@ export default function GalereyaProject() {
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
           <h1 className="text-[32px] sm:text-[48px] lg:text-[64px] font-black text-white uppercase">
-            Galereya
+            {dict.projects.galereya.title}
           </h1>
         </div>
       </div>

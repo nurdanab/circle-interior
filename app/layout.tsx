@@ -9,14 +9,14 @@ const notoSans = Noto_Sans({
 
 export const metadata: Metadata = {
   title: "Circle Interior",
-  description: "Circle Interior — студия дизайна интерьера",
+  description: "Circle Interior",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html>
       <body className={`${notoSans.variable} antialiased`}>{children}</body>

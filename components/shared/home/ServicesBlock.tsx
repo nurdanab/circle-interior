@@ -5,81 +5,41 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-
-type Service = {
-  name: string;
-  priceLabel: string;
-  description: string;
-  details: string[];
-};
-
-const ECONOM_DETAILS: string[] = [
-  "• Обмерный план (выезд на замер)",
-  "• Планировочное решение с расстановкой мебели до 5 вариантов",
-  "• Коллаж из материалов и мебели, без 3D",
-  "• Планы демонтажа и монтажа стен",
-  "• План электрики (розетки, выключатели)",
-  "• Разработка сценариев освещения",
-  "• Планы полов/ потолков",
-  "• Расклады керамогранита",
-  "• Ведомость отделочных материалов и мебели",
-];
-
-const BUSINESS_DETAILS: string[] = [
-  "• Обмерный план (выезд на замер)",
-  "• Планировочное решение с расстановкой мебели до 10 вариантов",
-  "• Детальный дизайн каждого помещения в 3D",
-  "• План демонтажа и монтажа стен",
-  "• План электрики (розетки, выключатели, освещение)",
-  "• Разработка сценариев освещения",
-  "• Планы полов/ потолков",
-  "• Раскладки керамогранита",
-  "• Ведомость отделочных материалов и мебели",
-];
-
-const PREMIUM_DETAILS: string[] = [
-  "• Подбор строителей под ваш бюджет",
-  "• Смета по проекту с ценами и поставщиками",
-  "• Тендер мебельных компаний",
-  "• Контроль меблировочного проекта",
-  "• Ведение бюджета и графика закупки материалов",
-  "• Проверка счетов и контроль поставки материалов",
-  "• Выезд в магазины для подбора материалов",
-  "• Регулярный выезд на стройку (1–2 раза в неделю)",
-  "• Ведение журнала авторского надзора",
-  "• Фото/видео отчёты о ходе работ на стройке",
-];
-
-const services: Service[] = [
-  {
-    name: "Econom",
-    priceLabel: "цена",
-    description: "Концепция интерьера + чертежи, без 3D",
-    details: ECONOM_DETAILS,
-  },
-  {
-    name: "Business",
-    priceLabel: "цена",
-    description: "Индивидуальный проект + чертежи",
-    details: BUSINESS_DETAILS,
-  },
-  {
-    name: "Premium",
-    priceLabel: "цена",
-    description: "От стройки до готового интерьера",
-    details: PREMIUM_DETAILS,
-  },
-];
+import { useDictionary } from "@/providers/DictionaryProvider";
 
 export default function ServicesBlock() {
+  const dict = useDictionary();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<"private" | "commercial">("private");
+  const [activeTab, setActiveTab] = useState<"private" | "commercial">(
+    "private"
+  );
+
+  const services = [
+    {
+      name: dict.services.econom.name,
+      priceLabel: dict.services.price,
+      description: dict.services.econom.description,
+      details: dict.services.econom.details,
+    },
+    {
+      name: dict.services.business.name,
+      priceLabel: dict.services.price,
+      description: dict.services.business.description,
+      details: dict.services.business.details,
+    },
+    {
+      name: dict.services.premium.name,
+      priceLabel: dict.services.price,
+      description: dict.services.premium.description,
+      details: dict.services.premium.details,
+    },
+  ];
 
   return (
     <section className="w-full bg-[#F3F3F3] px-4 py-16 sm:px-6 lg:px-[100px] lg:py-[160px]">
       <div className="mx-auto max-w-[1440px]">
         <h2 className="text-[32px] lg:text-[64px] font-black text-[#3A4731]">
-          услуги
+          {dict.services.title}
         </h2>
 
         {/* Desktop */}
@@ -93,7 +53,7 @@ export default function ServicesBlock() {
                 : "bg-transparent border border-[#3A4731] text-[#3A4731]"
             )}
           >
-            Частные
+            {dict.services.private}
           </button>
           <button
             onClick={() => setActiveTab("commercial")}
@@ -104,7 +64,7 @@ export default function ServicesBlock() {
                 : "bg-transparent border border-[#3A4731] text-[#3A4731]"
             )}
           >
-            Коммерческие интерьеры
+            {dict.services.commercial}
           </button>
         </div>
 
@@ -119,7 +79,7 @@ export default function ServicesBlock() {
                 : "bg-transparent border border-[#3A4731] text-[#3A4731]"
             )}
           >
-            Частные
+            {dict.services.private}
           </button>
           <button
             onClick={() => setActiveTab("commercial")}
@@ -130,7 +90,7 @@ export default function ServicesBlock() {
                 : "bg-transparent border border-[#3A4731] text-[#3A4731]"
             )}
           >
-            Коммерческие интерьеры
+            {dict.services.commercial}
           </button>
         </div>
 
@@ -179,8 +139,8 @@ export default function ServicesBlock() {
                 >
                   <span className="text-[clamp(10px,3.5vw,20px)] lg:text-[20px] text-[#191918]">
                     {isOpen
-                      ? "Скрыть описание тарифа"
-                      : "Открыть описание тарифа"}
+                      ? dict.services.hideDescription
+                      : dict.services.openDescription}
                   </span>
                   <Image
                     src="/icons/arrow-down.svg"
@@ -198,7 +158,7 @@ export default function ServicesBlock() {
                     variant="primary"
                     className="w-full h-[38px] lg:h-[56px] text-[clamp(12px,4.5vw,16px)] lg:text-[20px] rounded-[8px] lg:rounded-[40px]"
                   >
-                    Заказать дизайн
+                    {dict.services.orderButton}
                   </Button>
                 </div>
               </div>

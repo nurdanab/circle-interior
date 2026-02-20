@@ -1,18 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import type { Project } from "@/types/global";
+import { useDictionary } from "@/providers/DictionaryProvider";
 
 export default function ProjectsSection({
   projects = [],
 }: {
   projects?: Project[];
 }) {
+  const dict = useDictionary();
+
   return (
     <section className="mt-[80px] lg:mt-0 w-full bg-[#F3F3F3] py-16 px-4 sm:px-6 lg:py-[160px] lg:px-[120px]">
       <div className="mx-auto max-w-[1440px]">
         <h2 className="mb-[32px] sm:mb-[40px] text-center text-[32px] sm:text-[40px] lg:text-[64px] font-black text-[#191918]">
-          НАШИ ПРОЕКТЫ
+          {dict.projectsSection.title}
         </h2>
 
         <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 ">
@@ -46,7 +51,7 @@ export default function ProjectsSection({
                     {project.title}
                   </p>
                   <p className="text-[clamp(12px,4vw,16px)] lg:text-[16px] text-[#F3F3F3]">
-                    {project.category}
+                    {dict.projectsSection.category}
                   </p>
                 </div>
               </Link>
@@ -57,7 +62,7 @@ export default function ProjectsSection({
               variant="secondary"
               className="justify-between h-[80px] px-8 text-[36px] hover:bg-[#3A4731]/5 hover:text-[#3A4731]"
             >
-              Оставить заявку
+              {dict.projectsSection.button}
               <Image
                 src="/icons/arrow-down.svg"
                 alt="Arrow right"

@@ -1,35 +1,47 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter, useParams, usePathname } from "next/navigation";
 import { useState } from "react";
-import { nav } from "@/lib/constants";
-import { useLocale, useTranslations } from "next-intl";
-import { Link, useRouter, usePathname } from "@/i18n/navigation";
 import MobileMenu from "@/components/ui/MobileMenu";
-import type { Locale } from "@/i18n/routing";
+import { useDictionary } from "@/providers/DictionaryProvider";
+
+const locales = ["ru", "en", "kz"] as const;
 
 export default function HeaderProject() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const dict = useDictionary();
+  const params = useParams();
   const pathname = usePathname();
-  const t = useTranslations("common");
-  const locale = useLocale();
+  const currentLang = params.lang as string;
+
+  const nav = [
+    { href: "#about", label: dict.nav.about },
+    { href: "#projects", label: dict.nav.projects },
+    { href: "#process", label: dict.nav.process },
+    { href: "#services", label: dict.nav.services },
+    { href: "#contacts", label: dict.nav.contacts },
+  ];
 
   const navigateToSection = (href: string) => {
-    router.push("/" + href);
+    router.push(`/${currentLang}${href}`);
   };
 
-  const changeLocale = (newLocale: Locale) => {
-    router.replace(pathname, { locale: newLocale });
+  const getLocalePath = (locale: string) => {
+    const segments = pathname.split("/");
+    segments[1] = locale;
+    return segments.join("/");
   };
- 
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-[1440px] flex items-center justify-between px-6 lg:px-20 py-5 bg-[#19191833]/20 backdrop-blur-sm border border-white/20 text-[16px]">
-        <Link href="/">
+        <Link href={`/${currentLang}`}>
           <Image
             src="/logo.svg"
-            alt={t("logoAlt")}
+            alt="Circle Interior"
             width={60}
             height={52}
             priority
@@ -44,7 +56,7 @@ export default function HeaderProject() {
                   onClick={() => navigateToSection(item.href)}
                   className="hover:opacity-70 transition cursor-pointer"
                 >
-                  {t(item.labelKey)}
+                  {item.label}
                 </button>
               </li>
             ))}
@@ -52,24 +64,15 @@ export default function HeaderProject() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2 text-[20px] text-[#F3F3F3]">
-          <button
-            onClick={() => changeLocale("ru")}
-            className={`text-[20px] ${locale === "ru" ? "font-black" : "font-normal"}`}
-          >
-            ru
-          </button>
-          <button
-            onClick={() => changeLocale("en")}
-            className={`text-[20px] ${locale === "en" ? "font-black" : "font-normal"}`}
-          >
-            en
-          </button>
-          <button
-            onClick={() => changeLocale("kz")}
-            className={`text-[20px] ${locale === "kz" ? "font-black" : "font-normal"}`}
-          >
-            kz
-          </button>
+          {locales.map((locale) => (
+            <Link
+              key={locale}
+              href={getLocalePath(locale)}
+              className={`text-[20px] ${currentLang === locale ? "font-bold" : "font-normal opacity-70"}`}
+            >
+              {locale}
+            </Link>
+          ))}
         </div>
 
         <button
@@ -86,10 +89,10 @@ export default function HeaderProject() {
           />
         </button>
       </div>
-      <MobileMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} 
-        isProjectPage 
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        isProjectPage
       />
     </header>
   );
