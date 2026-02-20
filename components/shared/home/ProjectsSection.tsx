@@ -9,7 +9,7 @@ export default function ProjectsSection({
   projects?: Project[];
 }) {
   return (
-    <section className="w-full bg-[#F3F3F3] py-16 px-4 sm:px-6 lg:py-[160px] lg:px-[120px]">
+    <section className="mt-[80px] lg:mt-0 w-full bg-[#F3F3F3] py-16 px-4 sm:px-6 lg:py-[160px] lg:px-[120px]">
       <div className="mx-auto max-w-[1440px]">
         <h2 className="mb-[32px] sm:mb-[40px] text-center text-[32px] sm:text-[40px] lg:text-[64px] font-black text-[#191918]">
           НАШИ ПРОЕКТЫ
@@ -19,7 +19,7 @@ export default function ProjectsSection({
           {(projects ?? []).map((project) => (
             <div
               key={project.title}
-              className="relative overflow-hidden rounded-[32px] bg-black text-white min-h-[430px]"
+              className="relative overflow-hidden rounded-[32px] bg-black text-white min-h-[220px] lg:min-h-[430px]"
             >
               {project.type === "video" ? (
                 <video
@@ -42,17 +42,17 @@ export default function ProjectsSection({
 
               <Link href={project.href} className="block">
                 <div className="bg-[#19191833]/20 backdrop-blur-[10px] absolute inset-x-0 bottom-0 flex flex-col gap-1 px-6 py-4 border-t border-t-[#F3F3F3]">
-                  <p className="text-[36px] font-black text-[#F3F3F3] mb-2">
+                  <p className="text-[clamp(16px,5vw,22px)] lg:text-[36px] font-black text-[#F3F3F3] mb-2">
                     {project.title}
                   </p>
-                  <p className="text-[16px] text-[#F3F3F3]">
+                  <p className="text-[clamp(12px,4vw,16px)] lg:text-[16px] text-[#F3F3F3]">
                     {project.category}
                   </p>
                 </div>
               </Link>
             </div>
           ))}
-          <div className="flex items-end justify-center">
+          <div className="hidden lg:flex items-end justify-center">
             <Button
               variant="secondary"
               className="justify-between h-[80px] px-8 text-[36px] hover:bg-[#3A4731]/5 hover:text-[#3A4731]"

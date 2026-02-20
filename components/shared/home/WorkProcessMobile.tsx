@@ -1,3 +1,8 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+
 const steps = [
   {
     stage: "ЭТАП 1",
@@ -15,11 +20,13 @@ const steps = [
   },
   {
     stage: "ЭТАП 4",
-    titleTop: "РАБОЧИЙ ПРОЕКТ",
+    titleTop: "РАБОЧИЙ",
+    titleBottom: "ПРОЕКТ",
   },
   {
     stage: "ЭТАП 5",
-    titleTop: "АВТОРСКИЙ НАДЗОР",
+    titleTop: "АВТОРСКИЙ",
+    titleBottom: "НАДЗОР",
   },
   {
     stage: "ЭТАП 6",
@@ -29,20 +36,26 @@ const steps = [
 ];
 
 export default function WorkProcessMobile() {
-  const offsets = ["ml-0", "ml-6", "ml-12", "ml-20", "ml-28", "ml-36"];
+  const offsets = [0, 12, 24, 36, 48, 65];
 
   return (
     <section className="w-full bg-[#F3F3F3] px-6 py-16 lg:hidden">
       <div className="mx-auto max-w-[420px]">
-        <h2 className="mb-14 text-center text-[32px] font-black text-[#3A4731]">
+        <h2 className="mb-10 text-center text-[32px] font-black text-[#3A4731]">
           ПРОЦЕСС РАБОТЫ
         </h2>
 
-        <div className="space-y-16">
+        <div className="space-y-6">
           {steps.map((step, index) => (
-            <div key={step.stage}>
+            <motion.div
+              key={step.stage}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
+            >
               {/* Этап */}
-              <p className="mb-2 text-[16px] font-bold text-[#3A4731]">
+              <p className="mb-1 text-[16px] font-bold text-[#3A4731]">
                 {step.stage}
               </p>
 
@@ -51,9 +64,25 @@ export default function WorkProcessMobile() {
 
               {/* Плашка */}
               <div
-                className={`mt-4 w-fit rounded-[28px] bg-[#3A4731] px-6 py-5 text-[#F3F3F3] ${offsets[index]}`}
+                className={cn(
+                  "mt-0.5 w-fit rounded-[16px] bg-[#3A4731] text-[#F3F3F3]",
+                  step.stage === "ЭТАП 1"
+                    ? "p-3"
+                    : step.stage === "ЭТАП 2"
+                      ? "pl-3 pr-11 py-3"
+                      : step.stage === "ЭТАП 3"
+                        ? "p-3"
+                        : step.stage === "ЭТАП 4"
+                          ? "pl-3 pr-15 py-3"
+                          : step.stage === "ЭТАП 5"
+                            ? "pl-3 pr-12 py-3"
+                            : step.stage === "ЭТАП 6"
+                              ? "p-3"
+                              : "p-3",
+                )}
+                style={{ marginLeft: `${offsets[index]}%` }}
               >
-                <p className="text-[15px] font-bold leading-snug">
+                <p className="text-[12px] font-bold leading-snug">
                   {step.titleTop}
                   {step.titleBottom && (
                     <>
@@ -63,9 +92,9 @@ export default function WorkProcessMobile() {
                   )}
                 </p>
 
-                <p className="mt-3 text-[11px] opacity-80">СРОК:</p>
+                <p className="mt-1 text-[8px] opacity-80">СРОК:</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

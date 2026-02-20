@@ -22,51 +22,42 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 };
 
-export default function BenefitsGrid() {
+export default function BenefitsGridMobile() {
   return (
-    <section className="relative hidden lg:block">
-      <div className="relative mx-auto max-w-[1440px] px-4 py-16 sm:px-8 lg:px-20 lg:py-28">
-        {/* LINES */}
-        <div className="pointer-events-none absolute inset-0">
-          {/* top */}
-          <div className="absolute left-0 right-0 top-0 h-px bg-[#3E4A37]/30" />
-
-          {/* vertical */}
-          <div className="absolute left-[38%] top-0 bottom-0 w-px bg-[#3E4A37]/30" />
-
-          {/* horizontals */}
-          <div className="absolute left-0 right-0 top-1/3 h-px bg-[#3E4A37]/30" />
-          <div className="absolute left-0 right-0 top-2/3 h-px bg-[#3E4A37]/30" />
-          <div className="absolute left-0 right-0 bottom-0 h-px bg-[#3E4A37]/30" />
-        </div>
-
-        {/* CONTENT */}
-        <div className="relative grid gap-10 lg:grid-cols-[38%_62%] lg:gap-30">
+    <section className="relative block lg:hidden">
+      <div className="mx-auto max-w-[1440px] px-4 py-10">
+        {/* ROWS */}
+        <div className="relative">
+          {/* VERTICAL LINE */}
+          <div className="pointer-events-none absolute left-1/2 top-0 bottom-0 w-px bg-[#191918]" />
           {rows.map((r, idx) => (
-            <div key={idx} className="contents">
-              {/* LEFT */}
-              <div>
+            <div
+              key={idx}
+              className="grid grid-cols-2 gap-4 border-t border-[#191918] py-8 last:border-b"
+            >
+              {/* LEFT - TITLE */}
+              <div className="pr-4">
                 <motion.h3
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.5 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="whitespace-pre-line text-[32px] sm:text-[40px] lg:text-[50px] leading-[0.95] font-semibold text-[#3E4A37]"
+                  className="whitespace-pre-line text-[clamp(16px,4.5vw,24px)] font-black text-[#191918]"
                 >
                   {r.title}
                 </motion.h3>
               </div>
 
-              {/* RIGHT */}
-              <div className="pt-4 lg:p-10">
+              {/* RIGHT - TEXT */}
+              <div className="pl-4">
                 <motion.p
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ amount: 0.5 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.06 }}
-                  className="max-w-[640px] text-[14px] sm:text-[16px] lg:text-[20px] leading-relaxed text-[#2B2B2B]"
+                  className="text-[clamp(12px,4vw,16px)] leading-relaxed text-[#191918]"
                 >
                   {r.text}
                 </motion.p>

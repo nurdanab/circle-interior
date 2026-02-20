@@ -4,12 +4,12 @@ import "../styles/globals.css";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
   title: "Circle Interior",
-  description: "Circle Interior",
+  description: "Circle Interior — студия дизайна интерьера",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <body className={`${notoSans.variable} antialiased`}>{children}</body>
     </html>
   );

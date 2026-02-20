@@ -1,0 +1,134 @@
+{
+  "common": {
+    "navAbout": "About",
+    "navProjects": "Our Projects",
+    "navProcess": "Work Process",
+    "navServices": "Services",
+    "navContacts": "Contacts",
+    "viewProjects": "View Projects",
+    "orderDesign": "Order Design",
+    "discussProject": "Discuss Project",
+    "backToHome": "Back to Home",
+    "logoAlt": "Circle Interior"
+  },
+  "hero": {
+    "title1": "Interior Design",
+    "title2": "Studio",
+    "title3": "CIRCLE",
+    "description": "Modern residential and commercial interiors. Unique approach, support and turnkey implementation.",
+    "heroAlt": "Circle Interior"
+  },
+  "about": {
+    "title": "About",
+    "paragraph1": "CIRCLE is an interior design and implementation studio. We create thoughtful residential and commercial spaces — from concept to full turnkey implementation.",
+    "paragraph2": "Each project is handled by a team of professionals for whom design is not just a job, but a constant process of exploration, development and precision in details."
+  },
+  "benefits": {
+    "row1Title": "COMPREHENSIVE\nAPPROACH",
+    "row1Text": "We manage projects from drawings and sketches to finished interiors and furnishing.",
+    "row2Title": "COMFORT\nAND STYLE",
+    "row2Text": "We don't draw 'pictures', we create living spaces for your life scenarios.",
+    "row3Title": "PRECISE\nTECHNICAL\nDOCUMENTATION",
+    "row3Text": "We provide a complete package of clear, accurate and professional technical drawings for builders"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "category": "Commercial/Private"
+  },
+  "workProcess": {
+    "title": "WORK PROCESS",
+    "deadline": "DEADLINE:",
+    "stage1": "STAGE 1",
+    "stage1Title": "TECHNICAL",
+    "stage1Subtitle": "BRIEF",
+    "stage2": "STAGE 2",
+    "stage2Title": "SKETCH",
+    "stage2Subtitle": "PROJECT",
+    "stage3": "STAGE 3",
+    "stage3Title": "VISUALIZATION",
+    "stage4": "STAGE 4",
+    "stage4Title": "WORKING",
+    "stage4Subtitle": "PROJECT",
+    "stage5": "STAGE 5",
+    "stage5Title": "AUTHOR'S",
+    "stage5Subtitle": "SUPERVISION",
+    "stage6": "STAGE 6",
+    "stage6Title": "MAJOR",
+    "stage6Subtitle": "RENOVATION"
+  },
+  "services": {
+    "title": "services",
+    "private": "Private",
+    "commercial": "Commercial interiors",
+    "showDescription": "Show tariff description",
+    "hideDescription": "Hide tariff description",
+    "priceLabel": "price",
+    "econom": {
+      "name": "Econom",
+      "description": "Interior concept + drawings, without 3D",
+      "details": [
+        "Measurement plan (on-site measurement)",
+        "Layout solution with furniture arrangement up to 5 options",
+        "Collage of materials and furniture, without 3D",
+        "Demolition and wall construction plans",
+        "Electrical plan (sockets, switches)",
+        "Lighting scenarios development",
+        "Floor/ceiling plans",
+        "Ceramic tile layouts",
+        "Finishing materials and furniture list"
+      ]
+    },
+    "business": {
+      "name": "Business",
+      "description": "Individual project + drawings",
+      "details": [
+        "Measurement plan (on-site measurement)",
+        "Layout solution with furniture arrangement up to 10 options",
+        "Detailed 3D design of each room",
+        "Demolition and wall construction plan",
+        "Electrical plan (sockets, switches, lighting)",
+        "Lighting scenarios development",
+        "Floor/ceiling plans",
+        "Ceramic tile layouts",
+        "Finishing materials and furniture list"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "From construction to finished interior",
+      "details": [
+        "Builder selection within your budget",
+        "Project estimate with prices and suppliers",
+        "Furniture company tender",
+        "Furnishing project control",
+        "Budget and material procurement schedule management",
+        "Invoice verification and material delivery control",
+        "Store visits for material selection",
+        "Regular site visits (1-2 times a week)",
+        "Author's supervision journal",
+        "Photo/video reports on construction progress"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Have questions?",
+    "subtitle": "Leave a request and we will contact you!",
+    "namePlaceholder": "Name",
+    "phonePlaceholder": "Phone",
+    "ourContacts": "Our contacts:",
+    "phone": "+7 777 777 77 77",
+    "mapAlt": "Almaty map"
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Page not found",
+    "description": "Unfortunately, the requested page does not exist or has been moved"
+  },
+  "projectTitles": {
+    "steppeCoffee": "Steppe Coffee",
+    "galeriya": "Galeriya",
+    "homeBank": "Home Bank",
+    "sportsGround": "Sports ground",
+    "parkEmbankment": "Park embankment"
+  }
+}

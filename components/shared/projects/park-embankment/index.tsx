@@ -97,7 +97,7 @@ function Card({
         alt={alt}
         fill
         className="object-cover object-center"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
       />
     </div>
   );
@@ -107,7 +107,7 @@ export default function ParkEmbankmentProject() {
   return (
     <section className="mx-auto h-full w-full max-w-[1440px]">
       {/* HERO — фото как на других страницах */}
-      <div className="relative w-full aspect-[16/9] overflow-hidden">
+      <div className="relative h-screen">
         <Image
           src="/projects-pages/park-embankment/hero-park.png"
           alt="Park embankment"
@@ -116,14 +116,77 @@ export default function ParkEmbankmentProject() {
           priority
           sizes="100vw"
         />
+        <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
+          <h1 className="text-[32px] sm:text-[48px] lg:text-[64px] font-black text-white uppercase">
+            Park Embankment
+          </h1>
+        </div>
       </div>
 
       <div className="px-4 pt-[40px] pb-[45px] sm:px-6 lg:px-0 lg:pt-[60px]">
         {/* MOBILE */}
-        <div className="grid grid-cols-1 gap-4 lg:hidden">
-          {items.map((item, i) => (
-            <Card key={i} {...item} />
-          ))}
+        <div className="flex flex-col gap-4 lg:hidden">
+          {/* 1 */}
+          <Card {...items[0]} />
+
+          {/* 2 — 50/50 */}
+          <div className="grid grid-cols-2 gap-4 h-[150px]">
+            <div className="min-h-0">
+              <Card {...items[1]} fillCell />
+            </div>
+            <div className="min-h-0">
+              <Card {...items[2]} fillCell />
+            </div>
+          </div>
+
+          {/* 3 */}
+          <Card {...items[3]} />
+
+          {/* 4 — 70/30 */}
+          <div className="grid grid-cols-[7fr_3fr] gap-4 h-[180px]">
+            <div className="min-h-0">
+              <Card {...items[4]} fillCell />
+            </div>
+            <div className="min-h-0">
+              <Card {...items[5]} fillCell />
+            </div>
+          </div>
+
+          {/* 5 — 30/70 */}
+          <div className="grid grid-cols-[3fr_7fr] gap-4 h-[180px]">
+            <div className="min-h-0">
+              <Card {...items[6]} fillCell />
+            </div>
+            <div className="min-h-0">
+              <Card {...items[7]} fillCell />
+            </div>
+          </div>
+
+          {/* 6 */}
+          <Card {...items[8]} />
+
+          {/* 7 — 50/50 */}
+          <div className="grid grid-cols-2 gap-4 h-[150px]">
+            <div className="min-h-0">
+              <Card {...items[9]} fillCell />
+            </div>
+            <div className="min-h-0">
+              <Card {...items[10]} fillCell />
+            </div>
+          </div>
+
+          {/* 8 — 70/30 */}
+          <div className="grid grid-cols-[7fr_3fr] gap-4 h-[180px]">
+            <div className="min-h-0">
+              <Card {...items[11]} fillCell />
+            </div>
+            <div className="min-h-0">
+              <Card {...items[12]} fillCell />
+            </div>
+          </div>
+
+          {/* 9 */}
+          <Card {...items[13]} />
         </div>
 
         {/* DESKTOP */}

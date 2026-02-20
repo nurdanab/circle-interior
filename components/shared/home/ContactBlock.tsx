@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function ContactBlock() {
   return (
-    <section className="bg-[#E7E7E7] mt-[80px] w-full px-4 py-12 sm:px-6 lg:mt-[120px] lg:flex lg:items-center lg:gap-6 lg:px-[120px] lg:py-[60px]">
-      <div className="flex flex-col gap-8 items-start w-full lg:w-1/2">
-        <div className="flex flex-col text-start">
+    <section className="bg-[#E7E7E7] w-full px-4 py-12 sm:px-6 lg:flex lg:items-center lg:gap-6 lg:px-[120px] lg:py-[60px]">
+      <div className="flex flex-col gap-8 items-center lg:items-start w-full lg:w-1/2">
+        <div className="flex flex-col text-center lg:text-start">
           <span className="text-[32px] sm:text-[40px] lg:text-[48px] font-black text-[#191918]">
             Остались вопросы?
           </span>
@@ -18,23 +18,23 @@ export default function ContactBlock() {
           <Input
             variant="primary"
             placeholder="Имя"
-            className="h-[56px] rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
+            className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
           <Input
             variant="primary"
             placeholder="Телефон"
             type="tel"
-            className="h-[56px] rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
+            className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
           <Button
             variant="primary"
-            className="h-[56px] rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
+            className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           >
             Обсудить проект
           </Button>
         </form>
 
-        <div className="mt-6 flex w-full flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <div className="mt-6 flex w-full flex-row justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex flex-col gap-1">
             <span className="text-[20px] text-[#191918]">Наши контакты:</span>
             <span className="text-[20px] text-[#191918]">+7 777 777 77 77</span>

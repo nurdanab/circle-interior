@@ -38,7 +38,7 @@ function Card({
         alt={alt}
         fill
         className="object-cover object-center"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
       />
     </div>
   );
@@ -48,7 +48,7 @@ export default function HomeBankProject() {
   return (
     <section className="mx-auto w-full max-w-[1440px]">
       {/* HERO VIDEO */}
-      <div>
+      <div className="relative h-screen">
         <video
           autoPlay
           loop
@@ -58,69 +58,120 @@ export default function HomeBankProject() {
           src="/projects-pages/homeBank/homeBank-hero.mp4"
           className="h-full w-full object-cover"
         />
+        <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
+          <h1 className="text-[32px] sm:text-[48px] lg:text-[64px] font-black text-white uppercase">
+            Home Bank
+          </h1>
+        </div>
       </div>
 
       <div className="px-4 pt-[40px] pb-[45px] sm:px-6 lg:px-0 lg:pt-[60px]">
         <div className="mx-auto max-w-[1440px]">
           {/* MOBILE */}
-          <div className="grid grid-cols-1 gap-4 lg:hidden">
-            {items.map((item, i) => (
-              <Card key={i} {...item} />
-            ))}
+          <div className="flex flex-col gap-4 lg:hidden">
+            {/* 1 */}
+            <Card {...items[0]} />
+
+            {/* 2 — сложный ряд */}
+            <div className="grid grid-cols-2 gap-4 h-[280px]">
+              {/* левая половина — две картинки вертикально */}
+              <div className="flex flex-col gap-4 min-h-0">
+                <div className="flex-1 min-h-0">
+                  <Card {...items[1]} fillCell />
+                </div>
+                <div className="flex-1 min-h-0">
+                  <Card {...items[2]} fillCell />
+                </div>
+              </div>
+
+              {/* правая половина */}
+              <div className="min-h-0">
+                <Card {...items[3]} fillCell />
+              </div>
+            </div>
+
+            {/* 3 */}
+            <Card {...items[4]} />
+
+            {/* 4 */}
+            <Card {...items[5]} />
+
+            {/* 5 — 70 / 30 */}
+            <div className="grid grid-cols-[7fr_3fr] gap-4 h-[180px]">
+              <div className="min-h-0">
+                <Card {...items[6]} fillCell />
+              </div>
+              <div className="min-h-0">
+                <Card {...items[7]} fillCell />
+              </div>
+            </div>
+
+            {/* 6 — 30 / 70 */}
+            <div className="grid grid-cols-[3fr_7fr] gap-4 h-[180px]">
+              <div className="min-h-0">
+                <Card {...items[8]} fillCell />
+              </div>
+              <div className="min-h-0">
+                <Card {...items[9]} fillCell />
+              </div>
+            </div>
+
+            {/* 7 */}
+            <Card {...items[10]} />
           </div>
 
           {/* DESKTOP */}
           <div className="hidden lg:grid grid-cols-12 gap-5 lg:auto-rows-[200px] xl:auto-rows-[240px]">
-          {/* ROW 1 */}
-          <div className="col-span-12 lg:col-span-4 lg:row-span-2">
-            <Card {...items[0]} fillCell />
-          </div>
+            {/* ROW 1 */}
+            <div className="col-span-12 lg:col-span-4 lg:row-span-2">
+              <Card {...items[0]} fillCell />
+            </div>
 
-          <div className="col-span-12 lg:col-span-8 lg:row-span-2">
-            <Card {...items[1]} fillCell />
-          </div>
+            <div className="col-span-12 lg:col-span-8 lg:row-span-2">
+              <Card {...items[1]} fillCell />
+            </div>
 
-          {/* ROW 2 */}
-          <div className="col-span-12 lg:col-span-6 lg:row-span-2">
-            <Card {...items[2]} fillCell />
-          </div>
+            {/* ROW 2 */}
+            <div className="col-span-12 lg:col-span-6 lg:row-span-2">
+              <Card {...items[2]} fillCell />
+            </div>
 
-          <div className="col-span-12 lg:col-span-6 lg:row-span-2">
-            <Card {...items[3]} fillCell />
-          </div>
+            <div className="col-span-12 lg:col-span-6 lg:row-span-2">
+              <Card {...items[3]} fillCell />
+            </div>
 
-          {/* ROW 3 */}
-          <div className="col-span-12 lg:row-span-3">
-            <Card {...items[4]} fillCell />
-          </div>
+            {/* ROW 3 */}
+            <div className="col-span-12 lg:row-span-3">
+              <Card {...items[4]} fillCell />
+            </div>
 
-          {/* ROW 4 */}
-          <div className="col-span-12 lg:col-span-6 lg:row-span-2">
-            <Card {...items[5]} fillCell />
-          </div>
+            {/* ROW 4 */}
+            <div className="col-span-12 lg:col-span-6 lg:row-span-2">
+              <Card {...items[5]} fillCell />
+            </div>
 
-          <div className="col-span-12 lg:col-span-6 lg:row-span-2">
-            <Card {...items[6]} fillCell />
-          </div>
+            <div className="col-span-12 lg:col-span-6 lg:row-span-2">
+              <Card {...items[6]} fillCell />
+            </div>
 
-          {/* ROW 5 */}
-          <div className="col-span-12 lg:col-span-6 lg:row-span-2">
-            <Card {...items[7]} fillCell />
-          </div>
+            {/* ROW 5 */}
+            <div className="col-span-12 lg:col-span-6 lg:row-span-2">
+              <Card {...items[7]} fillCell />
+            </div>
 
-          <div className="col-span-12 lg:col-span-6 lg:row-span-2">
-            <Card {...items[8]} fillCell />
-          </div>
+            <div className="col-span-12 lg:col-span-6 lg:row-span-2">
+              <Card {...items[8]} fillCell />
+            </div>
 
-          {/* ROW 6 */}
-          <div className="col-span-12 lg:row-span-3">
-            <Card {...items[9]} fillCell />
-          </div>
+            {/* ROW 6 */}
+            <div className="col-span-12 lg:row-span-3">
+              <Card {...items[9]} fillCell />
+            </div>
 
-          {/* ROW 7 */}
-          <div className="col-span-12 lg:row-span-3">
-            <Card {...items[10]} fillCell />
-          </div>
+            {/* ROW 7 */}
+            <div className="col-span-12 lg:row-span-3">
+              <Card {...items[10]} fillCell />
+            </div>
           </div>
         </div>
       </div>

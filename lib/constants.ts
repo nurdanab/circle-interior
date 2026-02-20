@@ -1,12 +1,12 @@
 import { Project } from "@/types/global";
 
 export const nav = [
-  { href: "/about", label: "О студии" },
-  { href: "/projects", label: "Наши проекты" },
-  { href: "/process", label: "Процесс работы" },
-  { href: "/services", label: "Услуги" },
-  { href: "/contacts", label: "Контакты" },
-];
+  { href: "#about", labelKey: "navAbout" },
+  { href: "#projects", labelKey: "navProjects" },
+  { href: "#process", labelKey: "navProcess" },
+  { href: "#services", labelKey: "navServices" },
+  { href: "#contacts", labelKey: "navContacts" },
+] as const;
 
 export const projects: Project[] = [
   {
