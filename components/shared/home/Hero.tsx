@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { useDictionary } from "@/providers/DictionaryProvider";
 
@@ -10,12 +9,13 @@ export default function Hero() {
   return (
     <section className="relative flex flex-col lg:flex-row justify-center h-screen w-full lg:items-center px-[20px] py-20 sm:px-8 lg:px-[120px] lg:py-[250px]">
       <div className="absolute inset-0 -z-10">
-        <Image
-          src="/main/hero-main.png"
-          alt="Circle Interior"
-          fill
-          priority
-          className="object-cover"
+        <video
+          autoPlay
+          loop
+          playsInline
+          preload="metadata"
+          src="/main/hero-main.mp4"
+          className="h-full w-full object-cover"
         />
       </div>
 

@@ -3,8 +3,8 @@ import type { NextRequest } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-const locales = ["ru", "en", "kz"];
-const defaultLocale = "ru";
+const locales = ["en", "ru"];
+const defaultLocale = "en";
 
 function getLocale(request: NextRequest) {
   const headers = {
@@ -17,18 +17,27 @@ function getLocale(request: NextRequest) {
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-  );
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/favicon") ||
+    pathname.startsWith("/images") ||
+    pathname.startsWith("/icons") ||
+    pathname.match(/\.(.*)$/)
+  ) {
+    return NextResponse.next();
+  }
 
-  if (pathnameHasLocale) return;
+  // 2️⃣ если язык уже есть
+  if (/^\/(en|ru)(\/|$)/.test(pathname)) {
+    return NextResponse.next();
+  }
 
+  // 3️⃣ редирект только для страниц
   const locale = getLocale(request);
-
-  request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
+  return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
 }
 
 export const config = {
-  matcher: ["/((?!_next|.*\\..*).*)"],
+  matcher: ["/:path*"],
 };
