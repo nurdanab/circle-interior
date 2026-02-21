@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
@@ -7,6 +8,35 @@ import { useDictionary } from "@/providers/DictionaryProvider";
 
 export default function ContactBlock() {
   const dict = useDictionary();
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !phone) return;
+
+    setLoading(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone }),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        setName("");
+        setPhone("");
+        setTimeout(() => setSuccess(false), 3000);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="bg-[#E7E7E7] w-full px-4 py-12 sm:px-6 lg:flex lg:items-center lg:gap-6 lg:px-[120px] lg:py-[60px]">
@@ -19,23 +49,29 @@ export default function ContactBlock() {
             {dict.contact.subtitle}
           </span>
         </div>
-        <form className="flex w-full flex-col gap-4 sm:gap-[17px]">
+        <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4 sm:gap-[17px]">
           <Input
             variant="primary"
             placeholder={dict.contact.namePlaceholder}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
           <Input
             variant="primary"
             placeholder={dict.contact.phonePlaceholder}
             type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           />
           <Button
             variant="primary"
+            type="submit"
+            disabled={loading || !name || !phone}
             className="h-[56px] rounded-[16px] lg:rounded-[50px] backdrop-blur-xs text-[18px] sm:h-[65px] sm:text-[24px]"
           >
-            {dict.contact.submitButton}
+            {loading ? "..." : success ? "Отправлено!" : dict.contact.submitButton}
           </Button>
         </form>
 

@@ -1,0 +1,16 @@
+services:
+  circle-interior:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: circle-interior
+    restart: always
+    ports:
+      - "3002:3000"
+    networks:
+      - circle-network
+
+networks:
+  circle-network:
+    external: true
+    name: server_circle-network
