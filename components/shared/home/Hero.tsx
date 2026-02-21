@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import { useDictionary } from "@/providers/DictionaryProvider";
+import { cdnUrl } from "@/lib/cdn";
 
 export default function Hero() {
   const dict = useDictionary();
@@ -14,7 +15,7 @@ export default function Hero() {
           loop
           playsInline
           preload="metadata"
-          src="/main/hero-main.mp4"
+          src={cdnUrl("/main/hero-main.mp4")}
           className="h-full w-full object-cover"
         />
       </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cdnUrl } from "@/lib/cdn";
 
 type Item = {
   src: string;
@@ -7,20 +8,20 @@ type Item = {
 };
 
 const items: Item[] = [
-  { src: "/projects-pages/sports-ground/1.webp", alt: "Sports Ground 1", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/2.webp", alt: "Sports Ground 2", aspectRatio: "4/3" },
-  { src: "/projects-pages/sports-ground/3.webp", alt: "Sports Ground 3", aspectRatio: "4/3" },
-  { src: "/projects-pages/sports-ground/4.webp", alt: "Sports Ground 4", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/5.webp", alt: "Sports Ground 5", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/6.webp", alt: "Sports Ground 6", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/7.webp", alt: "Sports Ground 7", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/8.webp", alt: "Sports Ground 8", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/9.webp", alt: "Sports Ground 9", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/10.webp", alt: "Sports Ground 10", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/11.webp", alt: "Sports Ground 11", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/12.webp", alt: "Sports Ground 12", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/13.webp", alt: "Sports Ground 13", aspectRatio: "16/9" },
-  { src: "/projects-pages/sports-ground/14.webp", alt: "Sports Ground 14", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/1.webp"), alt: "Sports Ground 1", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/2.webp"), alt: "Sports Ground 2", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/sports-ground/3.webp"), alt: "Sports Ground 3", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/sports-ground/4.webp"), alt: "Sports Ground 4", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/5.webp"), alt: "Sports Ground 5", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/6.webp"), alt: "Sports Ground 6", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/7.webp"), alt: "Sports Ground 7", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/8.webp"), alt: "Sports Ground 8", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/9.webp"), alt: "Sports Ground 9", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/10.webp"), alt: "Sports Ground 10", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/11.webp"), alt: "Sports Ground 11", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/12.webp"), alt: "Sports Ground 12", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/13.webp"), alt: "Sports Ground 13", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/sports-ground/14.webp"), alt: "Sports Ground 14", aspectRatio: "16/9" },
 ];
 
 function Card({
@@ -60,7 +61,7 @@ export default function SportsGroundProject() {
           muted
           playsInline
           preload="metadata"
-          src="/projects-pages/sports-ground/site-hero.mp4"
+          src={cdnUrl("/projects-pages/sports-ground/site-hero.mp4")}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">

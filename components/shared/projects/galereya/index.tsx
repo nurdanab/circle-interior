@@ -1,13 +1,14 @@
 import Image from "next/image";
+import { cdnUrl } from "@/lib/cdn";
 
 type Item = { src: string; alt: string; aspectRatio: string };
 
 const items: Item[] = [
-  { src: "/projects-pages/galereya/1.webp", alt: "Galereya 1", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/2.webp", alt: "Galereya 2", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/3.webp", alt: "Galereya 3", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/4.webp", alt: "Galereya 4", aspectRatio: "4/3" },
-  { src: "/projects-pages/galereya/5.webp", alt: "Galereya 5", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/galereya/1.webp"), alt: "Galereya 1", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/galereya/2.webp"), alt: "Galereya 2", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/galereya/3.webp"), alt: "Galereya 3", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/galereya/4.webp"), alt: "Galereya 4", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/galereya/5.webp"), alt: "Galereya 5", aspectRatio: "16/9" },
 ];
 
 function Card({
@@ -48,7 +49,7 @@ export default function GalereyaProject() {
           muted
           playsInline
           preload="metadata"
-          src="/projects-pages/galereya/galereya-hero.mp4"
+          src={cdnUrl("/projects-pages/galereya/galereya-hero.mp4")}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">

@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { useDictionary } from "@/providers/DictionaryProvider";
+import { cdnUrl } from "@/lib/cdn";
 
 export default function ContactBlock() {
   const dict = useDictionary();
@@ -103,7 +104,7 @@ export default function ContactBlock() {
 
       <div className="mt-8 w-full lg:mt-0 lg:w-1/2">
         <Image
-          src="/main/Map.png"
+          src={cdnUrl("/main/Map.png")}
           alt="Map almaty"
           width={587}
           height={492}

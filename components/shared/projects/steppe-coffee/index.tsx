@@ -1,14 +1,15 @@
 import ProjectCard, { type ProjectItem } from "@/components/ui/ProjectCard";
+import { cdnUrl } from "@/lib/cdn";
 
 const items: ProjectItem[] = [
-  { src: "/projects-pages/steppe-coffee/1.webp", alt: "Steppe Coffee 1", aspectRatio: "4/3" },
-  { src: "/projects-pages/steppe-coffee/2.webp", alt: "Steppe Coffee 2", aspectRatio: "4/3" },
-  { src: "/projects-pages/steppe-coffee/3.webp", alt: "Steppe Coffee 3", aspectRatio: "4/3" },
-  { src: "/projects-pages/steppe-coffee/4.webp", alt: "Steppe Coffee 4", aspectRatio: "4/3" },
-  { src: "/projects-pages/steppe-coffee/5.webp", alt: "Steppe Coffee 5", aspectRatio: "4/3" },
-  { src: "/projects-pages/steppe-coffee/6.webp", alt: "Steppe Coffee 6", aspectRatio: "4/3" },
-  { src: "/projects-pages/steppe-coffee/7.webp", alt: "Steppe Coffee 7", aspectRatio: "4/3" },
-  { src: "/projects-pages/steppe-coffee/8.webp", alt: "Steppe Coffee 8", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/1.webp"), alt: "Steppe Coffee 1", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/2.webp"), alt: "Steppe Coffee 2", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/3.webp"), alt: "Steppe Coffee 3", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/4.webp"), alt: "Steppe Coffee 4", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/5.webp"), alt: "Steppe Coffee 5", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/6.webp"), alt: "Steppe Coffee 6", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/7.webp"), alt: "Steppe Coffee 7", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/steppe-coffee/8.webp"), alt: "Steppe Coffee 8", aspectRatio: "16/9" },
 ];
 
 export default function SteppeCoffeeProject() {
@@ -22,7 +23,7 @@ export default function SteppeCoffeeProject() {
           muted
           playsInline
           preload="metadata"
-          src="/projects-pages/steppe-coffee/steppe-coffee-hero.mp4"
+          src={cdnUrl("/projects-pages/steppe-coffee/steppe-coffee-hero.mp4")}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">

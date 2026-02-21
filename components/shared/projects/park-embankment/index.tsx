@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cdnUrl } from "@/lib/cdn";
 
 type Item = {
   src: string;
@@ -7,20 +8,20 @@ type Item = {
 };
 
 const items: Item[] = [
-  { src: "/projects-pages/park-embankment/1.png", alt: "Park Embankment 1", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/2.png", alt: "Park Embankment 2", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/3.png", alt: "Park Embankment 3", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/4.png", alt: "Park Embankment 4", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/5.png", alt: "Park Embankment 5", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/6.png", alt: "Park Embankment 6", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/7.png", alt: "Park Embankment 7", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/8.png", alt: "Park Embankment 8", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/9.png", alt: "Park Embankment 9", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/10.png", alt: "Park Embankment 10", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/11.png", alt: "Park Embankment 11", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/12.png", alt: "Park Embankment 12", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/13.png", alt: "Park Embankment 13", aspectRatio: "16/9" },
-  { src: "/projects-pages/park-embankment/14.png", alt: "Park Embankment 14", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/1.png"), alt: "Park Embankment 1", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/2.png"), alt: "Park Embankment 2", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/3.png"), alt: "Park Embankment 3", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/4.png"), alt: "Park Embankment 4", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/5.png"), alt: "Park Embankment 5", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/6.png"), alt: "Park Embankment 6", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/7.png"), alt: "Park Embankment 7", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/8.png"), alt: "Park Embankment 8", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/9.png"), alt: "Park Embankment 9", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/10.png"), alt: "Park Embankment 10", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/11.png"), alt: "Park Embankment 11", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/12.png"), alt: "Park Embankment 12", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/13.png"), alt: "Park Embankment 13", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/park-embankment/14.png"), alt: "Park Embankment 14", aspectRatio: "16/9" },
 ];
 
 function Card({
@@ -56,7 +57,7 @@ export default function ParkEmbankmentProject() {
       {/* HERO */}
       <div className="relative h-screen">
         <Image
-          src="/projects-pages/park-embankment/hero-park.png"
+          src={cdnUrl("/projects-pages/park-embankment/hero-park.png")}
           alt="Park Embankment"
           fill
           className="object-cover object-center"

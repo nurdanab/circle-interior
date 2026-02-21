@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cdnUrl } from "@/lib/cdn";
 
 type Item = {
   src: string;
@@ -7,17 +8,17 @@ type Item = {
 };
 
 const items: Item[] = [
-  { src: "/projects-pages/homeBank/1.webp", alt: "Home Bank 1", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/2.webp", alt: "Home Bank 2", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/3.webp", alt: "Home Bank 3", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/4.webp", alt: "Home Bank 4", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/5.webp", alt: "Home Bank 5", aspectRatio: "16/9" },
-  { src: "/projects-pages/homeBank/6.webp", alt: "Home Bank 6", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/7.webp", alt: "Home Bank 7", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/8.webp", alt: "Home Bank 8", aspectRatio: "16/9" },
-  { src: "/projects-pages/homeBank/9.webp", alt: "Home Bank 9", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/10.webp", alt: "Home Bank 10", aspectRatio: "4/3" },
-  { src: "/projects-pages/homeBank/11.webp", alt: "Home Bank 11", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/homeBank/1.webp"), alt: "Home Bank 1", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/2.webp"), alt: "Home Bank 2", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/3.webp"), alt: "Home Bank 3", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/4.webp"), alt: "Home Bank 4", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/5.webp"), alt: "Home Bank 5", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/homeBank/6.webp"), alt: "Home Bank 6", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/7.webp"), alt: "Home Bank 7", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/8.webp"), alt: "Home Bank 8", aspectRatio: "16/9" },
+  { src: cdnUrl("/projects-pages/homeBank/9.webp"), alt: "Home Bank 9", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/10.webp"), alt: "Home Bank 10", aspectRatio: "4/3" },
+  { src: cdnUrl("/projects-pages/homeBank/11.webp"), alt: "Home Bank 11", aspectRatio: "16/9" },
 ];
 
 function Card({
@@ -58,7 +59,7 @@ export default function HomeBankProject() {
           muted
           playsInline
           preload="metadata"
-          src="/projects-pages/homeBank/homeBank-hero.mp4"
+          src={cdnUrl("/projects-pages/homeBank/homeBank-hero.mp4")}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 flex items-start pt-[120px] pl-[20px] lg:items-center lg:pt-0 lg:pl-[120px]">
