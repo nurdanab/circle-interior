@@ -59,8 +59,14 @@ export default function ProjectsSection({
           ))}
           <div className="hidden lg:flex items-end justify-center">
             <Button
+              type="button"
               variant="secondary"
               className="justify-between h-[80px] px-8 text-[36px] hover:bg-[#3A4731]/5 hover:text-[#3A4731]"
+              onClick={() =>
+                document.getElementById("contacts")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
             >
               {dict.projectsSection.button}
               <Image
