@@ -13,9 +13,10 @@ export default function Hero() {
         <video
           autoPlay
           loop
+          muted
           playsInline
-          preload="metadata"
-          src={cdnUrl("/main/hero-main.mp4")}
+          poster={cdnUrl("/main/hero-main.webp")}
+          src={cdnUrl("/main/hero-main.webm")}
           className="h-full w-full object-cover"
         />
       </div>

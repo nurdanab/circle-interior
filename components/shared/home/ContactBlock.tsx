@@ -104,7 +104,7 @@ export default function ContactBlock() {
 
       <div className="mt-8 w-full lg:mt-0 lg:w-1/2">
         <Image
-          src={cdnUrl("/main/Map.png")}
+          src={cdnUrl("/main/Map.webp")}
           alt="Map almaty"
           width={587}
           height={492}
